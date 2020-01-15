@@ -2,12 +2,18 @@
   <div id="app">
     <Header />
     <Navigation />
-    <div id="nav">
+    <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
+    </div> -->
+    <div class="container-fluid mx-auto">
+      <router-view />
     </div>
-    <router-view />
-    <Footer />
+    <Footer
+      :app_maintainer="app_maintainer"
+      :app_title="app_title"
+      :app_version="app_version"
+    />
   </div>
 </template>
 
@@ -22,6 +28,14 @@ export default {
     Header,
     Navigation,
     Footer
+  },
+  data() {
+    return {
+      app_version: process.env.VUE_APP_VERSION,
+      app_title: process.env.VUE_APP_TITLE,
+      app_maintainer: process.env.VUE_APP_MAINTAINER,
+      app_api: process.env.VUE_APP_API
+    };
   }
 };
 </script>

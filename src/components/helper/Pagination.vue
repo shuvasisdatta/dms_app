@@ -84,7 +84,7 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style scoped lang="css">
 .pagination {
   justify-content: flex-end !important;
   .page-stats {
